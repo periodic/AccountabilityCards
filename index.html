@@ -2,75 +2,7 @@
   <head>
     <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-    <style>
-      .CardList {
-        /*
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        */
-      }
-      .CardList > div{
-        display: inline-block;
-      }
-
-      @media print {
-        .Card {
-          page-break-inside: avoid;
-        }
-      }
-
-      .Card {
-        margin: 1px;
-        width: 1.25in;
-        height: 3in;
-        box-sizing: border-box;
-        padding: 0.125in;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        font-family: "Comic Sans MS", sans-serif;
-        font-size: 80%;
-      }
-
-      .Card-morning {
-        border: 0.125in solid #f2ea27;
-      }
-      .Card-afternoon {
-        border: 0.125in solid #34b14a;
-      }
-      .Card-evening {
-        border: 0.125in solid #0095d4;
-      }
-      .Card-bonus {
-        border: 0.125in solid #f26527;
-      }
-      .Card-special {
-        border: 0.125in solid #c62032;
-      }
-
-      .Card-name {
-        order: 1;
-        text-align: center;
-        height: 0.5in;
-      }
-      .Card-category {
-        order: 3;
-        font-size: 80%;
-        height: 0.5in;
-        display: flex;
-        align-items: flex-end;
-      }
-      .Card-image {
-        order: 2;
-        font-size: 0.6in;
-      }
-      .Card-image img {
-        width: 100%;
-      }
-
-    </style>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <div id="root">
@@ -80,9 +12,10 @@
 const Morning = "Morning";
 const Afternoon = "Afternoon";
 const Evening = "Evening";
+const Weekly = "Weekly";
 const Bonus = "Bonus";
 const Special = "Special";
-const Categories = [Morning, Afternoon, Evening, Bonus, Special];
+const Categories = [Morning, Afternoon, Evening, Weekly, Bonus, Special];
 
 const cards = [
   // Morning
@@ -168,13 +101,6 @@ const cards = [
     }
   },
   {
-    name: "Bathing",
-    category: Evening,
-    icon: {
-      text: "🛀",
-    }
-  },
-  {
     name: "Quiet Time",
     category: Evening,
     icon: {
@@ -195,6 +121,23 @@ const cards = [
       text: "💁",
     }
   },
+
+  // Weekly
+  {
+    name: "Nail Care",
+    category: Weekly,
+    icon: {
+      text: "💅🏻",
+    }
+  },
+  {
+    name: "Bathing",
+    category: Weekly,
+    icon: {
+      text: "🛀",
+    }
+  },
+
 
   // Bonus
   {
